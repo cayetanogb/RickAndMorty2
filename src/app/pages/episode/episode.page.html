@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="episode$ | async as episode">{{episode.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="episode$ | async as episode">
+
+    <ion-card-header>
+      <ion-card-subtitle ion-text-center>{{episode.episode}}</ion-card-subtitle>
+      <ion-card-title>{{episode.name}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-item lines="none">
+      <ion-label>Air Date</ion-label>
+      <span slot="end">{{episode.air_date}}</span>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label>Characters</ion-label>
+      <span slot="end">{{episode.characters['name']}}</span>
+
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Created</ion-label>
+      <span slot="end">{{episode.created}}</span>
+    </ion-item>
+
+  </ion-card>
+</ion-content>

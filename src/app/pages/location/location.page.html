@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="location$ | async as location">{{location.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="location$ | async as location">
+
+    <ion-card-header>
+      <ion-card-subtitle ion-text-center>{{location.type}}</ion-card-subtitle>
+      <ion-card-title>{{location.name}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-item lines="none">
+      <ion-label>Dimension</ion-label>
+      <span slot="end">{{location.dimension}}</span>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label>Residents</ion-label>
+      <span slot="end">{{location.resident}}</span>
+
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Created</ion-label>
+      <span slot="end">{{location.created}}</span>
+    </ion-item>
+
+  </ion-card>
+</ion-content>
