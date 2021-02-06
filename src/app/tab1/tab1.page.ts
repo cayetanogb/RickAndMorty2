@@ -11,21 +11,26 @@ import { CharacterService } from '../services/character.service';
 export class Tab1Page implements OnInit {
 
   characters: Character[] = [];
+  texto = '';
 
   constructor(private _character: CharacterService) {
-    // Almacena el resultado de los personajes en el array de characters
+    // Almacena el resultado de los personajes
     this._character.getCharacters().subscribe( res => {
       this.characters = res.results;
     });
   }
 
   ngOnInit() {
-    // Almacena el resultado de los personajes en la variable _character
+    // Almacena el resultado de los personajes
     this._character.getCharacters()
       .subscribe( (res: CharacterResults) => {
         const temp: CharacterResults = res;
         this.characters = temp.results;
       });
+  }
+
+  buscar(e) {
+    this.texto = e.detail.value;
   }
 
 }

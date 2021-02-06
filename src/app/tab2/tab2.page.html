@@ -4,11 +4,14 @@
       Locations
     </ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar (ionChange)="buscar($event)"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item *ngFor="let location of locations" [routerLink]="['/location', location.id]">
+    <ion-item *ngFor="let location of locations | filtro: texto: 'name'" [routerLink]="['/location', location.id]">
       <ion-label>
         <h2>{{location.name}}</h2>
         <h3>{{location.type}}</h3>

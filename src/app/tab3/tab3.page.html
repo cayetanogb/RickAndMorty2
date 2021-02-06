@@ -4,11 +4,14 @@
       Episodes
     </ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar (ionChange)="buscar($event)"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item *ngFor="let episode of episodes" [routerLink]="['/episode', episode.id]">
+    <ion-item *ngFor="let episode of episodes | filtro: texto: 'name'" [routerLink]="['/episode', episode.id]">
       <ion-label>
         <h2>{{episode.name}}</h2>
         <h3>{{episode.air_date}}</h3>

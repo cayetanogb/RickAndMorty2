@@ -23,4 +23,5 @@ export class LocationService {
   getLocation(id): Observable<Location> {
     if (id) return this._http.get<Location>(this.url+'/'+id);
   }
+
 }

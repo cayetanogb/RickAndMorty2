@@ -12,7 +12,6 @@ import { CharacterService } from 'src/app/services/character.service';
 export class ProfilePage implements OnInit {
 
   profileId: number;
-  character: Character;
   character$: Observable<Character>;
 
   constructor(private activateRoute: ActivatedRoute, private _character: CharacterService) { }

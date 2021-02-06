@@ -12,7 +12,6 @@ import { EpisodeService } from 'src/app/services/episode.service';
 export class EpisodePage implements OnInit {
 
   episodeId: number;
-  episode: Episode;
   episode$: Observable<Episode>;
 
   constructor(private activatedRoute: ActivatedRoute, private _episode: EpisodeService) { }

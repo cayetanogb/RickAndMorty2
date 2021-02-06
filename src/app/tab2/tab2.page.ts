@@ -11,6 +11,7 @@ import { LocationService } from '../services/location.service';
 export class Tab2Page implements OnInit {
 
   locations: Location[] = [];
+  texto = '';
 
   constructor(private _location: LocationService) {
     // Almacena el resultado de las ubicaciones en el array locations
@@ -26,4 +27,9 @@ export class Tab2Page implements OnInit {
         this.locations = temp.results;
       })
   }
+
+  buscar(e) {
+    this.texto = e.detail.value;
+  }
+
 }

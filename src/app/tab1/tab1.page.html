@@ -4,11 +4,14 @@
       Characters
     </ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar (ionChange)="buscar($event)"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item *ngFor="let character of characters" [routerLink]="['/profile', character.id]">
+    <ion-item *ngFor="let character of characters | filtro: texto: 'columna'" [routerLink]="['/profile', character.id]">
       <ion-avatar slot="start">
         <img [src]="character.image">
       </ion-avatar>

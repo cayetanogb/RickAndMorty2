@@ -11,6 +11,7 @@ import { EpisodeService } from '../services/episode.service';
 export class Tab3Page implements OnInit {
 
   episodes: Episode[] = [];
+  texto = '';
 
   constructor(private _episode: EpisodeService) {
     // Almacena el resultado de los episodios
@@ -24,6 +25,10 @@ export class Tab3Page implements OnInit {
       const temp: EpisodeResults = res;
       this.episodes = temp.results;
     });
+  }
+
+  buscar(e) {
+    this.texto = e.detail.value;
   }
 
 }

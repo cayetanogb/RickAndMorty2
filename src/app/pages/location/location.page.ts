@@ -12,8 +12,8 @@ import { LocationService } from 'src/app/services/location.service';
 export class LocationPage implements OnInit {
 
   locationId: number;
-  location: Location;
   location$: Observable<Location>;
+  resident: string;
 
   constructor(private activateRoute: ActivatedRoute, private _location: LocationService) { }
 
